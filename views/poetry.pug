@@ -1,0 +1,16 @@
+html
+  head
+    title
+  body
+    - var count=0
+    ul
+      each key, index in values
+        li= key["author"]
+        ul
+          each val, index1 in key["poems"]
+            -link="/poetry/:id"+val
+              a(value=val href=link id="link-test" name=val url=val)
+                li= val
+
+
+ 
