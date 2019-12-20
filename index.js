@@ -27,8 +27,8 @@ app.get('/poetry', function (req, res) {
 
 app.get('/poetry/:id', function (req, res) {
 
-    var data = req.app.get('data');
-    id = req.params.id;
+    //let d = req.app.get('data');
+    let id = req.params.id;
     id=id.split(":id")[1];
 
     let arr= poems["poems"];

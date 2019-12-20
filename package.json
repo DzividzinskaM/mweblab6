@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint index.js",
+    "prettier": "prettier --config .prettierrc.json --write index.js",
+    "precommit": "npm run prettier",
+    "prepush": "npm run test",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +17,15 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "pug": "^2.0.4"
+  },
+  "precommit":"npm run prettier",
+  "prepush": "call npm run lint && call npm run test",
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1"
   }
 }
